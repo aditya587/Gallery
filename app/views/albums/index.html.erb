@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+
+    <h1 class="mb-4 mt-5"> My Albums</h1>
+
+<table class="table table-striped text-center ">
+    <thead class="bg-info text-white">
+        <tr>
+            <th>Email.Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created on</th>
+            <th>Updated on</th>
+            <th>Show</th>
+            <th>Edit</th>
+            <th>Destroy</th>
+
+        </tr>
+    </thead>
+
+    <tbody class="mb-1 bg-light">
+        <% @albums.each do |album| %>
+        <tr>
+            <td><%= album.user.email %></td>
+            <td><%= album.title %></td>
+            <td><%= album.discription %></td>
+            <td><%= album.created_at.to_s.split(' ')[0] %></td>
+            <td><%= album.updated_at.to_s.split(' ')[0] %></td>
+            <td><%= link_to 'Show', album, class:'btn btn-success btn-sm' %></td>
+            <td><%= link_to 'Edit', edit_album_path(album), class:'btn btn-secondary btn-sm' %></td>
+            <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %></td>
+
+
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= paginate @albums%>
