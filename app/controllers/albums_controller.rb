@@ -12,12 +12,7 @@ class AlbumsController < ApplicationController
           @albums = current_user.albums.page(params[:page])
       end
   end
-  def home
-    @albums = Album.all
-    @albums = Album.order(:last_name).page(params[:page])
-  end
-
-
+  
   def show
    end
 

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
   get "allalbums" => 'albums#index'
-  get "recent" => 'albums#home'
 
   resources :albums
 
