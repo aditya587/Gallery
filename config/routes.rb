@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   root 'home#index'
-  get "allalbums" => 'albums#index'
-
-  resources :albums
-
   resources :albums do
     member do
     delete :delete_upload
