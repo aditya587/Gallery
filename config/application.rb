@@ -20,8 +20,8 @@ module Gallery
       :address          => 'smtp.gmail.com',
       :domain           => 'mail.google.com',
       :port             => 587,
-      :user_name        => "",
-      :password         => "",
+      :user_name        => "vaditya587@gmail.com",
+      :password         => "rocktheworld911",
       :authenticatoin   => 'login',
       :enable_starttls_auto  => true
     }

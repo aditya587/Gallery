@@ -12,9 +12,15 @@ class AlbumsController < ApplicationController
           @albums = current_user.albums.page(params[:page])
       end
   end
-  
+
+  def home
+    
+  end
+
   def show
    end
+
+
 
 
   def new
