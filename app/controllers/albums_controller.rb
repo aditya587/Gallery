@@ -8,6 +8,7 @@ class AlbumsController < ApplicationController
       if album ==true
           @albums = Album.all
         
+
       else
           @albums = current_user.albums.page(params[:page])
       end
