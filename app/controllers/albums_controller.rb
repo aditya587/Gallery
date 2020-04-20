@@ -7,14 +7,10 @@ class AlbumsController < ApplicationController
    album= current_user.admin
       if album ==true
           @albums = Album.all
-          @albums = Album.order(:last_name).page(params[:page])
+        
       else
           @albums = current_user.albums.page(params[:page])
       end
-  end
-
-  def home
-    
   end
 
   def show
