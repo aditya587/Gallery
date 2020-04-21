@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     delete :delete_upload
     end
   end
+   get "recent" => 'albums#recent'
+   get "imgs" => 'albums#recentshow'
 
   get '/tagged', to: "albums#tagged", as: :tagged
 

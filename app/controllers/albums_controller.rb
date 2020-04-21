@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
    album= current_user.admin
       if album ==true
           @albums = Album.all
-        
+
 
       else
           @albums = current_user.albums.page(params[:page])
@@ -17,8 +17,9 @@ class AlbumsController < ApplicationController
   def show
    end
 
-
-
+  def recent
+      @albums = Album.all
+  end
 
   def new
     @album = Album.new

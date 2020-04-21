@@ -28,6 +28,18 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'hirb'
+gem 'devise'
+
+gem 'mini_magick', '~>4.8'
+
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'
+gem 'kaminari'
+gem 'acts-as-taggable-on', '~> 6.5'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +55,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+#for heroku
 group :production do
   gem 'pg'
 end
@@ -58,15 +71,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'devise'
-
-gem 'mini_magick', '~>4.8'
-
-gem 'bootstrap'
-gem 'jquery-rails'
-gem 'simple_form'
-gem 'popper_js'
-gem 'tether-rails'
-gem 'kaminari'
-gem 'acts-as-taggable-on', '~> 6.5'
