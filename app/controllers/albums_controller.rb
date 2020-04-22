@@ -14,6 +14,10 @@ class AlbumsController < ApplicationController
       end
   end
 
+  def search
+    @albums=Album.where("title LIKE ?","%" + params[:q] + "%")
+  end
+
   def show
    end
 

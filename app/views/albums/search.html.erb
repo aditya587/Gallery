@@ -1,0 +1,17 @@
+<h1 class="mt-5 mb-5">Search Results</h1>
+
+<div class="row">
+<% @albums.each do |album| %>
+  <div class="card col-md-3" >
+
+    <div class="card-body ">
+      <p><strong>User: </strong><%= album.user.email %></p>
+      <p><strong>Title: </strong><%= album.title %></p>
+      <p ><strong>Published On: </strong><span class="text-muted"><%= album.created_at.to_s.split(' ')[0] %></span></p>
+      <p><strong>Last Updated: </strong><span class="text-muted"><%= album.updated_at.to_s.split(' ')[0] %></span></p>
+      <%= link_to 'Show', album, class:'btn btn-success btn-sm' %>
+    </div>
+  </div>
+
+<% end %>
+</div>

@@ -37,6 +37,8 @@
       <li class="nav-item">
         <%= link_to "Upload", new_album_path, class: 'btn btn-primary ' %>
       </li>
+
+
       <% end %>
     </ul>
 
@@ -44,14 +46,23 @@
 
         <% if user_signed_in? %>
 
-        <li class="nav-item">
+        <li class="nav-item mt-1">
          <p class="text-secondary pt-2 pr-2"><%= current_user.email.split('@')[0].capitalize %></p>
         </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item mt-1">
             <%= link_to "Log Out", destroy_user_session_path, class: 'nav-link', method: :delete %>
           </li>
+
+
+
+
+
+          <form class="form-inline my-2 my-lg-0" action="/search">
+              <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 btn-sm" type="submit">Search</button>
+            </form>
 
         <% else %>
 
@@ -60,8 +71,11 @@
           </li>
 
           <li class="nav-item">
-            <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-primary' %>
+            <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-primary ' %>
           </li>
+
+
+
 
         <% end %>
 

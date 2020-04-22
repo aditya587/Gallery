@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     delete :delete_upload
     end
   end
+   get 'search', to: "albums#search"
    get "recent" => 'albums#recent'
    get "imgs" => 'albums#recentshow'
 
