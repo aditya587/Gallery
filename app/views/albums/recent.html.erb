@@ -1,20 +1,5 @@
 <h1 class="mb-4 mt-5"> Recent Albums</h1>
-<%= search_form_for @search do |f| %>
-<div class="d-flex flex-row">
-<div class="field form-group mr-2 d-flex flex-row">
-  <%= f.label :title_cont , "Title:", class: "mr-2 mt-1"%>
-  <%= f.text_field :title_cont, class: "form-control"  %>
-</div>
-<div class="field form-group mr-2 d-flex flex-row">
-  <%= f.label :discription_cont , "Discription:", class: "mr-2 mt-1"%>
-  <%= f.text_field :discription_cont, class: "form-control"  %>
-</div>
-<div class="actions ">
-   <%= f.submit "Search", class: "btn btn-primary"%>
-</div>
 
-</div>
-<%end%>
 
 
       <!----  Email.Id

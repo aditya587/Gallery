@@ -1,8 +1,8 @@
 class Album < ApplicationRecord
-    paginates_per 4
+    paginates_per 2
     belongs_to :user
     has_many_attached :images
-  
+
     acts_as_taggable_on :tags
 
     validates :title, presence: true

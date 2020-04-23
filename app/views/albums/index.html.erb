@@ -60,7 +60,6 @@
 
 <% else %>
 <h1 class="mb-4 mt-5"> My Albums</h1>
-
 <%= search_form_for @search do |f| %>
 <div class="d-flex flex-row">
 <div class="field form-group mr-2 d-flex flex-row">
@@ -77,6 +76,7 @@
 
 </div>
 <%end%>
+
 
 <table class="table table-striped text-center ">
 <thead class="bg-info text-white">
@@ -107,6 +107,6 @@
 </tbody>
 </table>
 
-<%= paginate @albums%>
+
 
 <%end %>
