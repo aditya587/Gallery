@@ -16,7 +16,8 @@
           <% (0...@album.images.count).each do |image| %>
            <div class="card col-md-4 mb-3 p-2 " >
 
-         <%= image_tag(@album.thumbnail(image)) %>
+    
+          <%= image_tag(@album.thumbnail(image), class:'card-img-top img-fluid') %>
 
           <div class="card-body">
 

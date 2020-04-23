@@ -3,14 +3,15 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @search= Album.search(params[:q])
+    @albums = @search.result
    album= current_user.admin
       if album ==true
-          @albums = Album.all
+
 
 
       else
-          @albums = current_user.albums.page(params[:page])
+        @albums = current_user.albums.page(params[:page])
       end
   end
 
@@ -19,10 +20,12 @@ class AlbumsController < ApplicationController
   end
 
   def show
+
    end
 
   def recent
-      @albums = Album.all
+    @search= Album.search(params[:q])
+    @albums = @search.result
   end
 
   def new
