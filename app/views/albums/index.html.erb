@@ -1,6 +1,6 @@
 
-<% var = current_user.admin %>
-<% if var== true %>
+
+<% if current_user.admin? %>
 
     <h1 class="mb-4 mt-5"> My Albums</h1>
 
@@ -54,7 +54,7 @@
         <% end %>
     </tbody>
 </table>
-<%= paginate @albums %>
+<div class=""><%= paginate @albums %></div>
 
 
 

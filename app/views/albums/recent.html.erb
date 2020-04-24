@@ -10,7 +10,7 @@
         Show ------>
 
 
-    <div class="row">
+    <div class="row mb-5">
     <% @albums.each do |album| %>
       <div class="card col-md-3" >
 
@@ -25,3 +25,4 @@
 
     <% end %>
     </div>
+    <%= paginate @albums %>

@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
    end
 
   def recent
-  @albums=Album.all
+  @albums=Album.all.page(params[:page])
   end
 
   def new
