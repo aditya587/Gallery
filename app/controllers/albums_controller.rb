@@ -4,16 +4,14 @@ class AlbumsController < ApplicationController
 
   def index
 
-   album= current_user.admin
-      if album ==true
+
+      if current_user.admin?
           @search= Album.search(params[:q])
-          @albums = @search.result
-
-
+             @albums = @search.result.page(params[:page])
       else
-      @albums = current_user.albums.page(params[:page])
-      @search= Album.search(params[:q])
-      @a= @search.result
+
+       @search = current_user.albums.search(params[:q])
+       @albums = @search.result.page(params[:page])
       end
   end
 
