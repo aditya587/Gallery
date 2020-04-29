@@ -1,15 +1,15 @@
 
-
+<% if user_signed_in? %>
 <h2 class="h2 p-3 text-center">
 
     <%= @album.title.capitalize %>
 </h2>
-<% if user_signed_in? %>
+
 <div>
 
 <p  class="text-right ">Date: <span class="text-muted"><%= @album.created_at.to_s.split(' ')[0] %></span> | Tags: <%= raw @album.tag_list.map {|t| link_to t, tagged_path(t) }.join(', ')  %></p>
 </div>
-<% end %>
+
 
 
 
@@ -22,14 +22,14 @@
 
           <%= image_tag(@album.thumbnail(image), class:'card-img-top img-fluid') %>
 
-            <% if user_signed_in? %>
+
           <div class="card-body">
 
 
                  <%= link_to 'Remove', delete_upload_album_url(@album.images[image]), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm ' %>
 
           </div>
-          <% end %>
+
         </div>
         <% end %>
       </div>
@@ -38,3 +38,34 @@
         <span class="text-muted"><%= @album.discription %></span>
     </p></div>
     <br>
+<% else %>
+<h2 class="h2 p-3 text-center">
+
+    <%= @album.title.capitalize %>
+</h2>
+
+
+<div class="row">
+
+
+      <% (0...@album.images.count).each do |image| %>
+       <div class="card col-md-4 mb-3 p-2 " >
+
+
+      <%= image_tag(@album.thumbnail(image), class:'card-img-top img-fluid') %>
+
+
+      <div class="card-body">
+
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+  <div class="m-2"><p class=" ">
+          <strong>Description:</strong>
+          <span class="text-muted"><%= @album.discription %></span>
+      </p></div>
+      <br>
+
+  <% end %>
