@@ -42,6 +42,7 @@ class AlbumsController < ApplicationController
 
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
+         AlbumMailer.new_album(@album).deliver_now
         format.json { render :show, status: :created, location: @album }
 
       else
@@ -70,6 +71,7 @@ class AlbumsController < ApplicationController
    @album.destroy
        respond_to do |format|
         format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
+        AlbumMailer.destroy_album(@album).deliver_now
         format.json { head :no_content }
        end
   end
