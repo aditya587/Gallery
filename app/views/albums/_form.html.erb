@@ -34,13 +34,18 @@
       <%= form.label :tag_list %>
       <%= form.text_field :tag_list, class: 'form-control' %>
     </div>
+    <div class="field">
+      <%= form.check_box :publish %>
+      <%= form.label :publish, "Private" %>
+    </div>
+
     <%= form.submit %>
 
 
   </div>
 
+
 </div>
   <%= link_to 'Back', albums_path, class: 'btn btn-primary' %>
-
 
 <% end %>

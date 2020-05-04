@@ -33,8 +33,10 @@
     <div class="card-body ">
       <p><strong>User: </strong><%= album.user.email %></p>
       <p><strong>Title: </strong><%= album.title %></p>
+      <p><strong>Description: </strong><%= album.discription %></p>
       <p ><strong>Published On: </strong><span class="text-muted"><%= album.created_at.to_s.split(' ')[0] %></span></p>
       <p><strong>Last Updated: </strong><span class="text-muted"><%= album.updated_at.to_s.split(' ')[0] %></span></p>
+
       <%= link_to 'Show', album, class:'btn btn-success btn-sm' %>
       <%= link_to 'Edit', edit_album_path(album), class:'btn btn-secondary btn-sm' %>
       <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %>
@@ -55,7 +57,13 @@
     <div class="card-body ">
 
       <p><strong>Title: </strong><%= album.title %></p>
-      <p ><strong>Published On: </strong><span class="text-muted"><%= album.created_at.to_s.split(' ')[0] %></span></p>
+      <p><strong>Discriprion: </strong><%= album.discription %></p>
+      <%= form_with(model: album, local: true) do |form| %>
+      <div class="field">
+        <%= form.check_box :publish %>
+        <%= form.label :publish, "Private" %>
+        <% end %>
+      </div>
       <%= link_to 'Show', album, class:'btn btn-success btn-sm' %>
       <%= link_to 'Edit', edit_album_path(album), class:'btn btn-secondary btn-sm' %>
       <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %>
