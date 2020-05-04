@@ -40,6 +40,7 @@ gem 'tether-rails'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.5'
 gem 'ransack'
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

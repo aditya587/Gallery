@@ -1,19 +1,14 @@
-<h1 class="mb-4 mt-5"> Recent Albums</h1>
 
-
-
-      <!----  Email.Id
-        Title
-        Description
-        Created on
-        Updated on
-        Show ------>
-
-
-    <div class="row mb-5">
+  <div class="jumbotron mt-4">
+    <h1 class="h1 text-center">Album Example</h1>
+    <p class="text-muted text-center">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <center><button type="button" class="btn btn-primary">Read more</button>
+    <button type="button" class="btn btn-secondary">About</button></center>
+  </div>
+    <div class="row ">
     <% @albums.each do |album| %>
-      <div class="card col-md-3" >
-
+      <div class="card col-md-4 mb-2 pl-5 pr-5 pt-5 pb-2 " >
+         <img class="card-img-top img-fluid" src="https://lh3.googleusercontent.com/proxy/pPkyH0q-OyPDwNlhjz15_CEKBpk3VzI9qnzD0uGkv6xuFLaKJsKjC2PBj1QYBrXw5j6UVqLU1y3oi5cir4a21zgzqaGk2dYs1Jy3DSeP" alt="Card image cap">
         <div class="card-body ">
           <p><strong>User: </strong><%= album.user.email %></p>
           <p><strong>Title: </strong><%= album.title %></p>
