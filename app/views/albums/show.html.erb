@@ -37,6 +37,7 @@
         <strong>Description:</strong>
         <span class="text-muted"><%= @album.discription %></span>
     </p></div>
+    <%= link_to 'Back', albums_path, class: 'btn btn-primary' %>
     <br>
 <% else %>
 <h2 class="h2 p-3 text-center">
@@ -66,6 +67,7 @@
           <strong>Description:</strong>
           <span class="text-muted"><%= @album.discription %></span>
       </p></div>
+      <%= link_to 'Back', recent_path, class: 'btn btn-primary' %>
       <br>
 
   <% end %>
