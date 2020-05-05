@@ -29,7 +29,7 @@
 <div class="row ">
 <% @albums.each do |album| %>
   <div class="card col-md-4 mb-2 pl-5 pr-5 pt-5 pb-3" >
-     <img class="card-img-top img-fluid" src="https://lh3.googleusercontent.com/proxy/pPkyH0q-OyPDwNlhjz15_CEKBpk3VzI9qnzD0uGkv6xuFLaKJsKjC2PBj1QYBrXw5j6UVqLU1y3oi5cir4a21zgzqaGk2dYs1Jy3DSeP" alt="Card image cap">
+     <img class="card-img-top img-fluid" src="https://www.jakpost.travel/wimages/large/106-1065693_android-marshmallow-6-wallpapers-hd-android-marshmallow.png" alt="Card image cap">
     <div class="card-body ">
       <p><strong>User: </strong><%= album.user.email %></p>
       <p><strong>Title: </strong><%= album.title %></p>
@@ -53,17 +53,12 @@
 <div class="row ">
 <% @albums.each do |album| %>
   <div class="card col-md-4 mb-2 pl-5 pr-5 pt-5 pb-3" >
-     <img class="card-img-top img-fluid" src="https://lh3.googleusercontent.com/proxy/pPkyH0q-OyPDwNlhjz15_CEKBpk3VzI9qnzD0uGkv6xuFLaKJsKjC2PBj1QYBrXw5j6UVqLU1y3oi5cir4a21zgzqaGk2dYs1Jy3DSeP" alt="Card image cap">
+   <img class="card-img-top img-fluid" src="https://www.jakpost.travel/wimages/large/106-1065693_android-marshmallow-6-wallpapers-hd-android-marshmallow.png" alt="Card image">
     <div class="card-body ">
 
       <p><strong>Title: </strong><%= album.title %></p>
       <p><strong>Discriprion: </strong><%= album.discription %></p>
-      <%= form_with(model: album, local: true) do |form| %>
-      <div class="field">
-        <%= form.check_box :publish %>
-        <%= form.label :publish, "Private" %>
-        <% end %>
-      </div>
+
       <%= link_to 'Show', album, class:'btn btn-success btn-sm' %>
       <%= link_to 'Edit', edit_album_path(album), class:'btn btn-secondary btn-sm' %>
       <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %>

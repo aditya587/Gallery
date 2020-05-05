@@ -7,8 +7,9 @@
   </div>
     <div class="row ">
     <% @albums.each do |album| %>
+    <% unless album.publish? %>
       <div class="card col-md-4 mb-2 pl-5 pr-5 pt-5 pb-2  " >
-         <img class="card-img-top img-fluid" src="https://lh3.googleusercontent.com/proxy/pPkyH0q-OyPDwNlhjz15_CEKBpk3VzI9qnzD0uGkv6xuFLaKJsKjC2PBj1QYBrXw5j6UVqLU1y3oi5cir4a21zgzqaGk2dYs1Jy3DSeP" alt="Card image cap">
+         <img class="card-img-top img-fluid" src="https://cdn.wallpapersafari.com/30/51/YmvlFg.jpg" alt="Card image cap">
         <div class="card-body ">
           <p><strong>User: </strong><%= album.user.email %></p>
           <p><strong>Title: </strong><%= album.title %></p>
@@ -17,7 +18,7 @@
           <%= link_to 'Show', album, class:'btn btn-success btn-sm' %>
         </div>
       </div>
-
+    <% end %>
     <% end %>
     </div>
     <%= paginate @albums %>
