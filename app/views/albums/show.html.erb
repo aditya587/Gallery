@@ -25,9 +25,9 @@
 
           <div class="card-body">
 
-               <% if current_user.admin || current_user.email? == @album.user.email %>
+
                  <%= link_to 'Remove', delete_upload_album_url(@album.images[image]), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm ' %>
-              <% end %>
+              
           </div>
 
         </div>

@@ -7,7 +7,7 @@
   </div>
     <div class="row ">
     <% @albums.each do |album| %>
-    <% unless album.publish? %>
+
       <div class="card col-md-4 mb-2 pl-5 pr-5 pt-5 pb-2  " >
          <img class="card-img-top img-fluid" src="https://cdn.wallpapersafari.com/30/51/YmvlFg.jpg" alt="Card image cap">
         <div class="card-body ">
@@ -19,6 +19,6 @@
         </div>
       </div>
     <% end %>
-    <% end %>
+  
     </div>
     <%= paginate @albums %>
