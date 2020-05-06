@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
    end
 
   def recent
-    
+
   @albums=Album.all.page(params[:page])
 
   end
@@ -102,6 +102,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :discription, :tag_list, images: [])
+      params.require(:album).permit(:title, :discription,:publish, :tag_list, images: [])
     end
 end
